@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #f7f5ef;
+  --color-foreground: #263a30;
+  --color-primary: #294b3b;
+  --color-primary-foreground: #f7f5ef;
+  --color-accent: #bb7558;
+  --color-muted-foreground: #72766d;
+  --color-card: #eeece4;
+  --color-border: #dedbd1;
+  --color-gold: #d7b574;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", Arial, sans-serif;
+  --shadow-soft: 0 18px 50px rgb(38 58 48 / 12%);
+  --shadow-lift: 0 28px 70px rgb(38 58 48 / 18%);
+}
+
+:root {
+  color-scheme: light;
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+em {
+  font-weight: 400;
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.arch {
+  border-radius: 999px 999px 1rem 1rem;
+}
+
+.fade-up {
+  animation: fade-up 650ms both;
+}
+
+.marquee {
+  animation: marquee 35s linear infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
